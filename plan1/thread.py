@@ -3,7 +3,7 @@ from typing import Callable, Any
 
 class MyThread(threading.Thread):
     """
-    用于多线程
+    用于多线程返回结果
     """
     
     def __init__(self, func: Callable, args: tuple):

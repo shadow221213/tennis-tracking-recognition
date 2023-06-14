@@ -108,7 +108,6 @@ class Solve:
     
     def __del__( self ):
         GPIO.cleanup( )
-        print("GPIO.cleanup( )")
 
 if __name__ == '__main__':
     Solution = Solve(17, 4)

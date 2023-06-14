@@ -79,7 +79,6 @@ class Ball:
                 cv2.circle(img, (x, y), r, (0, 255, 0), 5)
                 cv2.circle(img, (x, y), 3, (0, 0, 255), -1)
                 cv2.imshow("img", img)
-                print("x =", x, "y =", y, "r =", r)
 
         global cnt
         
