@@ -2,7 +2,7 @@
  * @Description: 基于YOLO的网球跟踪识别
  * @Author: shadow221213
  * @Date: 2023-06-12 13:45:13
- * @LastEditTime: 2023-06-14 15:40:54
+ * @LastEditTime: 2023-06-14 15:45:47
 -->
 
 # 基于YOLO的网球跟踪识别
@@ -36,7 +36,7 @@
     <tr align="center">
         <td>yolov5m.pt</td>
         <td>4.09s</td>
-        <td><font color=red>97.90%</font></td>
+        <th>97.90%</th>
     </tr>
     <tr align="center">
         <td>yolov5s.pt</td>
@@ -45,7 +45,7 @@
     </tr>
     <tr align="center">
         <td>yolov5n.pt</td>
-        <td><font color=red>0.99s</font></td>
+        <th>0.99s</mark></th>
         <td>96.21%</td>
     </tr>
 </table>
