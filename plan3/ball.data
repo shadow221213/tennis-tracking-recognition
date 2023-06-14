@@ -1,0 +1,22 @@
+[name]
+model_name=ball
+
+[train-configure]
+epochs=300
+steps=150,250
+batch_size=16
+subdivisions=1
+learning_rate=0.001
+
+[model-configure]
+pre_weights=None
+classes=1
+width=640
+height=640
+anchor_num=3
+anchors=13.82,14.43, 30.43,33.78, 52.33,48.11, 76.91,76.18, 124.44,123.52, 210.80,211.97
+
+[data-configure]
+train=./ball/ball_data/dataSet_path/train.txt
+val=./ball/ball_data/dataSet_path/val.txt
+names=./ball.names
