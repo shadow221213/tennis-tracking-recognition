@@ -1,23 +1,23 @@
-import math
 import socket
 import struct
+import time
 
 import RPi.GPIO as GPIO
 import cv2
 
 import servos
 
-host_ip = '192.168.81.85'
+host_ip = '192.168.42.85'
 host_port = 2222
 
-camra_width = 640
-camra_height = 640
+camra_width = 480
+camra_height = 480
 camra_fps = 10
 
 step_img = 10
 
-pin_up = 4
-pin_down = 17
+pin_up = 17
+pin_down = 4
 
 class Solve:
     
@@ -79,6 +79,11 @@ if __name__ == '__main__':
     cap.set(cv2.CAP_PROP_FPS, camra_fps)
     img_cnt = 0
     
+    all_time = 0
+    all_time1 = 0
+    all_time2 = 0
+    cnt = 0
+    
     while True:
         ret, img = cap.read( )
         img_cnt += 1
@@ -89,8 +94,18 @@ if __name__ == '__main__':
         else:
             solve.img = img
         
+        time1 = time.time( )
         solve.image_to_data( )
+        time2 = time.time( )
+        time1 = time2 - time1
         msg = solve.mySocket.recv(1024)
+        time2 = time.time( ) - time2
+        
+        all_time1 += time1
+        all_time2 += time2
+        all_time += time1 + time2
+        print(all_time)
+        cnt += 1
         
         if len(msg) > 0:
             msg = msg.decode("utf-8")
@@ -112,19 +127,28 @@ if __name__ == '__main__':
             
             cv2.imshow("img", solve.img)
             cv2.waitKey(1)
-
+            
             theta_up = solve.theta_up
             theta_down = solve.theta_down
+            print("x,y:", x, y)
             up, down = solve.calc_angle(x, y)
             theta_up += up
             theta_up = max(0, min(180, theta_up))
             theta_down += down
             theta_down = max(0, min(180, theta_down))
             
-            solve.servo_up.setAngle(theta_up)
-            solve.servo_down.setAngle(theta_down)
+            #solve.servo_up.setAngle(theta_up)
+            #solve.servo_down.setAngle(theta_down)
+            print("up,down:", up, down)
+            print("theta_up,theta_down:", theta_up, theta_down)
             solve.theta_up = theta_up
             solve.theta_down = theta_down
+        if all_time > 10:
+            break
+        
+    print("time1:", all_time1 / cnt)
+    print("time2:", all_time2 / cnt)
+    print("time:", all_time / cnt)
     
     cap.release( )
     GPIO.cleanup( )

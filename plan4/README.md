@@ -2,7 +2,7 @@
  * @Description: 基于Socket的网球跟踪识别
  * @Author: shadow221213
  * @Date: 2023-06-14 14:38:36
- * @LastEditTime: 2023-06-14 15:47:24
+ * @LastEditTime: 2023-07-07 13:25:57
 -->
 
 # 基于Socket的网球跟踪识别
@@ -22,18 +22,36 @@
         <th>识别时长</th>
     </tr>
     <tr align="center">
-        <td>plan2</td>
+        <th>plan2</th>
         <td colspan="2">0.99s</td>
         <th>96.21%</th>
     </tr>
     <tr align="center">
-        <td rowspan="2">plan4</td>
-        <th colspan="2">0.0951s</td>
+        <th rowspan="2">640</th>
+        <td colspan="2">0.0951s</td>
         <td rowspan="2">95.80%</td>
     </tr>
     <tr align="center">
         <td>0.0127s</td>
         <td>0.0824s</td>
+    </tr>
+    <tr align="center">
+        <th rowspan="2">480</th>
+        <td colspan="2">0.07794s</td>
+        <td rowspan="2">95.40%</td>
+    </tr>
+    <tr align="center">
+        <td>0.0083s</td>
+        <td>0.06964s</td>
+    </tr>
+    <tr align="center">
+        <th rowspan="2">320</th>
+        <th colspan="2">0.07025s</th>
+        <td rowspan="2">94.80%</td>
+    </tr>
+    <tr align="center">
+        <th>0.00548s</th>
+        <th>0.06477s</th>
     </tr>
 </table>
 
