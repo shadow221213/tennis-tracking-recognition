@@ -2,7 +2,7 @@
  * @Description: 基于YOLO的网球跟踪识别
  * @Author: shadow221213
  * @Date: 2023-06-12 13:45:13
- * @LastEditTime: 2023-06-14 15:45:47
+ * @LastEditTime: 2023-09-21 16:30:04
 -->
 
 # 基于YOLO的网球跟踪识别
@@ -19,7 +19,7 @@
 
 <table>
     <tr>
-        <th>传输时长</th>
+        <th>预训练集</th>
         <th>识别时长</th>
         <th>准确度</th>
     </tr>
